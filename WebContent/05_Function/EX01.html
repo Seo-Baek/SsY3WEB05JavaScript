@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+
+	/*
+		함수의 종류
+			1. 사용자 정의 함수
+				형식) function 함수명(매개변수){
+						실행문;
+					}
+			2. 내장 함수 : JavaScript에서 자체적으로 제공해 주는 함수
+	*/
+	function oper(su1, su2, str){	// 자료형을 쓰지 않아도 된다.
+		
+		if(str === "sum"){
+			return su1+su2;
+		} else if(str === "minus"){
+			return su1-su2;
+		} else if(str === "multi"){
+			return su1*su2;
+		} else if(str === "div"){
+			return su1/su2;
+		} else if(str === "adiv"){
+			return su1%su2;
+		} 
+				
+	}
+	let su1 = parseInt(prompt("첫번째 수 입력."));
+	let su2 = parseInt(prompt("첫번째 수 입력."));
+	
+	document.write("두 수의 합 ==> " + oper(su1,su2,"sum") + "<br />");
+	document.write("두 수의 빼기 ==> " +  oper(su1,su2,"minus") + "<br />");
+	document.write("두 수의 곱하기 ==> " +  oper(su1,su2,"multi") + "<br />");
+	document.write("두 수의 나누기 ==> " +  oper(su1,su2,"div") + "<br />");
+	document.write("두 수의 나머지 ==> " +  oper(su1,su2,"adiv") + "<br />");
+	 
+
+</script>
+</head>
+<body>
+
+</body>
+</html>

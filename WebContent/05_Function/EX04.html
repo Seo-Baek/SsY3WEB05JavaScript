@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+
+	<h1>숫자 맞추기 게임</h1>
+	<p>이 게임은 컴퓨터가 임의의 난수를 발생시킨 숫자를 맞추는 게임입니다.<br />
+		숫자는 1부터 100사이에서 지정됩니다.</p>
+	<form>
+		숫자 : <input type="text" id="user" size="5">
+			 <input type="button" value="확인" onclick="guess()"><br /><br />
+		추측 횟수 : <input type="text" id="count" size="5">
+		힌 트 : <input type="text" id="result" size="50">
+	</form>
+	<script>
+		/*
+			자바스크립트에서 body 태그의 요소(Element)를 가져오는 방법(2가지)
+				1. <form> 태그의 name 속성으로 가져오는 방법
+					형식) 폼이름.name이름.value;
+				2. 태그의 id 속성으로 가져오는 방법.
+					형식) document.getElementById("아이디").value;
+					
+		*/
+		let random = Math.ceil((Math.random() * 100) +1);
+		let count = 0;
+		function guess() {
+			
+			console.log(random);
+			
+			let result = ""; // 결과 메세지가 저장 변수
+			
+			let su = parseInt(document.getElementById("user").value);				
+			count++;
+			
+			if(su == random){
+				result = "성공입니다.";
+			} else if(su < random){
+				result = "현재 숫자는 지정된 수보다 작은 숫자입니다.";
+			} else if(su > random){
+				result = "현재 숫자는 지정된 수보다 큰 숫자입니다.";
+			} else {
+				result = "숫자를 입력해주세요.";
+				alert("숫자를 입력해주세요.");
+				count--;
+			}
+			document.getElementById("result").value = result;
+			document.getElementById("count").value = count;
+			
+			if(result === "성공입니다." && count < 4){
+				alert("실력이 대단하시네요!");
+			}
+		}
+	</script>
+			
+
+</body>
+</html>

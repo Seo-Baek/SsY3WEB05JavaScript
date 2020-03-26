@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+
+	// 내장 객체 - 수학 관련 객체(Math)
+	/*
+		수학 객체 관련 함수(메소드)
+		 - abs(숫자) : 숫자의 절대값을 반환하는 함수.
+		 - max(숫자1, 숫자2, 숫자3, 숫자4 ...) : 숫자 중 가장 큰 값을 반환하는 함수.
+		 - min(숫자1, 숫자2, 숫자3, 숫자4 ...) : 숫자 중 가장 작은 값을 반환하는 함수.
+		 - pow(숫자, 제곱값) : 숫자를 거듭제곱한 값을 반환하는 함수.
+		 - random() : 0 ~ 1 사이의 난수를 반환하는 함수.
+		 - round(숫자) : 소수점 첫째 자리에서 반올림하여 정수를 반환하는 함수.
+		 - ceil(숫자) : 소수점 첫째 자리에서 무조건 올림해서 정수를 반환하는 함수.
+		 - floor(숫자) : 소수점 첫째 자리에서 무조건 내림해서 정수를 반환하는 함수.
+		 - sqrt(숫자) : 숫자의 제곱근의 값을 반환하는 함수.
+	*/
+	document.write("최대값 ===> " + Math.max(30, 47, 8, 81, 60, 93) + "<br />");
+	document.write("최소값 ===> " + Math.min(30, 47, 8, 81, 60, 93) + "<br />");
+	
+	let num = 2.1234;
+	document.write("반올림한 정수값 ===> " + Math.round(num) + "<br />");
+	document.write("올림한 정수값 ===> " + Math.ceil(num) + "<br />");
+	num = 2.6555;
+	document.write("반올림한 정수값 ===> " + Math.round(num) + "<br />");
+	document.write("버림한 정수값 ===> " + Math.floor(num) + "<br />");
+	
+	document.write(Math.random() + "<br />");
+	
+	// 특정 숫자 사이의 난수를 발생시키는 방법
+	// Math.random() * 최대값 + 최소값
+	document.write((Math.floor((Math.random()*10)+1)) + "<br />");
+	document.write("<hr />");
+	document.write("<h3>오늘의 로또 번호</h3>");
+	for(let i = 0; i < 5; i++){
+		document.write(Math.floor((Math.random()*45+1))+"&nbsp");
+	}
+	
+
+</script>
+</head>
+<body>
+
+</body>
+</html>

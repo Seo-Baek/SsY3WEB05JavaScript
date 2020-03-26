@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+
+	// 1. 조건문 - switch~case문
+	let site = prompt("네이버, 다음, 네이트, 구글 중 자주 사용하는 포털 사이트는?");
+	let url;
+	switch(site) {
+		case "네이버" :
+			url  = "www.naver.com";
+			break;
+		case "다음" :
+			url = "www.daum.net";
+			break;
+		case "네이트" :
+			url = "www.nate.com";
+			break;
+		case "구글" :
+			url = "www.google.com";
+			break;
+		default :
+			alert("보기 중에는 없는 사이트입니다.");
+	}
+	if(url){
+		//location.href="http://"+url;	_self방식
+		window.open("http://"+url);	// 팝업차단됨이뜬다 ㅋㅋㅋ 차단 풀면 잘나옴!
+	} else {
+		location.reload();
+	}
+	
+</script>
+</head>
+<body>
+
+</body>
+</html>

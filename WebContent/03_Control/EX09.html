@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+	/*
+ 		 1  2  3  4  5
+ 		11 12 13 14 15 ..... 25까지 테이블로
+ 	*/
+ 	let tempt = 0;
+ 	document.write("<table>");
+	for(let i = 1; i<=5; i++){
+		document.write("<tr>");
+		for(let j = 1; j <= 5; j++){
+			tempt++;
+			document.write("<td>"+tempt+"</td>");
+		}
+		document.write("</tr>");
+	}
+	document.write("</table>");
+	document.write("<hr width='230' align='left' />");
+	
+	// 오빠들은 if를 썼넹?
+	document.write("<table>");
+	document.write("<tr>")
+	for(let i = 1; i <= 25; i++){
+		document.write("<td>" + i + "</td>");
+		if(i % 5 === 0){
+			if(i === 25)
+				document.write("</tr>");
+			else
+				document.write("</tr><tr>");
+		}
+	}
+ 	document.write("</table>");
+ 	document.write("<hr width='230' align='left' />");
+ 	// ㅋㅋㅋㅋ if문을 하나만 썼길래 이상해서 가봤는데... 열기만하던가 닫기만해도 tr태그가 인식된다!
+ 	
+	/*
+		 1  6 11 16 21
+		 2  7 12 17 22 ...... 25까지 테이블로
+	*/
+	
+	document.write("<table>");
+	for(let i = 1; i <=5; i++){
+		tempt = i;
+		document.write("<tr>");
+		for(let j = 1; j <=5; j++){
+			document.write("<td>"+tempt+"</td>");
+			tempt +=5;
+		}
+		document.write("</tr>");
+	}
+	document.write("</table>");
+	
+	document.write("<hr width='230' align='left' />");
+	
+	// 변수에 수를 계산해야한다는 생각은 버리는 것이 좋다! 
+	// 변수에 table 태그를 + 시켜서 한꺼번에 함수처리한 예제
+	let table="<table>";
+	for(let i = 1; i <= 5; i++){
+		table +="<tr>";
+		for(let j = 0; j < 5; j++){
+			table +="<td>" + (j * 5 + i) + "</td>";
+		}
+		table +="</tr>";
+	}
+	table += "</table>";
+	document.write(table);
+</script>
+<style type="text/css">
+	table{
+		border: 1px solid black;
+		border-collapse: collapse;
+	}
+	td{
+		border: 1px solid black;
+		text-align: right; 
+		width: 40px;
+		padding: 10px 5px 10px 0;
+	}
+	
+</style>
+</head>
+<body>
+
+</body>
+</html>

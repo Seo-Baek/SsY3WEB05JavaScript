@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style>
+	#myTable{
+		width: 400px;
+		border : 1px solid black;
+		border-collapse: collapse;
+	}
+	
+	#myTable th, #myTable td{
+		border : 1px solid black;
+		text-align: center;
+	}
+</style>
+</head>
+<body>
+<script>
+	function addRow(){
+		// 1. 한 개의 <tr> 태그와 4개의 <td>태그를 만들어야 함.
+		let tr = document.createElement("tr");
+		let td1 = document.createElement("td");
+		let td2 = document.createElement("td");
+		let td3 = document.createElement("td");
+		let td4 = document.createElement("td");
+		
+		// 2. 각각의 <td> 태그에 <form>태그의 text 창에서 입력한 내용을 텍스트로 설정.
+		td1.innerHTML = f.num.value;
+		td2.innerHTML = f.name.value;
+		td3.innerHTML = f.phone.value;
+		td4.innerHTML = "삭제";
+		
+		// 3. <tr> 태그에 <td> 태그들을 추가해 주어야 함.
+		tr.appendChild(td1);
+		tr.appendChild(td2);
+		tr.appendChild(td3);
+		tr.appendChild(td4);
+		
+		let tab = document.getElementById("myTable");
+		let tbody = tab.children[1];
+		tbody.appendChild(tr);
+		
+		f.num.value="";
+		f.name.value="";
+		f.phone.value="";
+		f.num.focus();
+		
+		// <tr>에 마우스가 올라갔을 때 해당 행의 번호를 table 객체가 기억해야 함.
+		tr.onmouseover = function() {
+			tab.clickedRowIndex = this.rowIndex;	
+			// 여기서 this는 호출자, 마우스가 올라간 것을 뜻함
+		}
+		
+		// 클릭을 하면 해당 행을 삭제
+		td4.onclick = function(){
+			// 테이블의 행번호를 받아서 동적으로 테이블의 행을 삭제함.
+			tab.deleteRow(tab.clickedRowIndex);
+		}
+	}
+</script>
+
+
+	<h2>테이블에 행을 추가 / 삭제하는 예제</h2>
+	<form name="f">
+		<fieldset>
+			번  호 : <input type="text" size="3" name="num">
+			이  름 : <input type="text" size="10" name="name">
+			연락처: <input type="text" size="15" name="phone">
+			<input type="button" value="추가" onclick="addRow()">
+		</fieldset>
+	</form>
+	<table id="myTable">
+		<thead>
+			<tr>
+				<th>번호</th>
+				<th>이름</th>
+				<th>연락처</th>
+				<th>삭제</th>
+			</tr>
+		</thead>
+		<tbody>
+		
+		</tbody>
+	</table>
+
+</body>
+</html>

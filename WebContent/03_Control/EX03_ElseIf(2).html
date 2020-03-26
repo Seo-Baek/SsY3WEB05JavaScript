@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+
+	/*
+		1. 조건문 - 다중 if~else문
+	*/
+	let db_id = "hong";
+	let db_pwd = "1234";
+	
+	// 사용자에게 키보드로 아이디와 비밀번호를 입력을 받자.
+	let user_id = prompt("아이디를 입력하세요.");
+	let user_pwd = prompt("비밀번호를 입력하세요.");
+	
+	if(user_id === db_id){
+		if(user_pwd === db_pwd)	// 아이디와 비밀번호가 같은 경우
+			document.write(user_id + " 님 환영합니다.");
+		else {	// 아이디는 맞으나 비밀번호가 틀린 경우
+			alert("비밀번호가 틀립니다.\n확인요망");
+			location.reload(); 	// 브라우저에서 새로 고침이 실행됨.
+		}	
+	} else if(user_id === db_id && user_pwd != db_pwd){
+		alert("아이디가 일치하지 않습니다.\n확인해주세요.");	//alert에서는 태그가 아니라 \n으로 개행
+		location.reload();
+	}else {	// 아이디가 일치하지 않는 경우
+		alert("아이디와 비밀번호 모두 일치하지 않습니다.\n확인해주세요.");	//alert에서는 태그가 아니라 \n으로 개행
+		location.reload();
+	}
+</script>
+</head>
+<body>
+
+</body>
+</html>

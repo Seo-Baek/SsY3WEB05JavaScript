@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+
+	onload = function(){
+		// 선그리기 요소 추가 
+		let hr_element = document.createElement("hr");
+		hr_element.style="width: 300px;";
+		hr_element.setAttribute("align","left");
+		// 문서의 본문에 추가
+		document.body.appendChild(hr_element);
+		
+		document.body.appendChild(document.createElement("hr"));
+		
+		//<p>안녕하세요</p>
+		let p_element = document.createElement("p");
+		let text_element = document.createTextNode("안녕하세요.");
+		let p_element2 = document.createElement("p");
+		let text_element2 = document.createTextNode("안녕하세요.");
+		p_element.appendChild(text_element);
+		p_element2.appendChild(text_element2);	// Node는 추가되면 다시 사요할 수 없다!
+		
+		p_element.setAttribute("style","color: red; font-weight: bold;");
+		let myDiv = document.getElementById("myDiv");
+		myDiv.appendChild(p_element);
+		
+		document.body.appendChild(p_element2);
+		
+	};
+
+</script>
+</head>
+<body>
+
+	<div id="myDiv"></div>
+		
+
+</body>
+</html>

@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+
+	function data(){
+		let res = frm.input.value;
+		if(res == "") {	// 값이 없는 상태
+			alert("값을 입력하세요.")
+			frm.input.focus();	// 커서 이동 메소드
+		} else {	//값이 들어있는 경우
+			alert("값을 입력하셨군요~~~");
+			alert(res);
+			document.write(res);
+		}
+		
+	}
+	
+	function calc(){
+		let su1 = parseInt(document.getElementById("su1").value);
+		let su2 = parseInt(document.getElementById("su2").value);
+		let op = document.querySelector('input[name="op"]:checked').value;
+		
+		switch(op){
+		case "+" :
+			document.write(su1 + " + " + su2 + " = " + (su1+su2) + "<br />");
+			break;
+		case "-" :
+			document.write(su1 + " - " + su2 + " = " + (su1-su2) + "<br />");
+			break;
+		case "*" :
+			document.write(su1 + " * " + su2 + " = " + (su1*su2) + "<br />");
+			break;
+		case "/" :
+			document.write(su1 + " / " + su2 + " = " + (su1/su2) + "<br />");
+			break;
+		case "%" :
+			document.write(su1 + " % " + su2 + " = " + (su1%su2) + "<br />");
+			break;
+	
+		}
+		
+	}
+
+</script>
+</head>
+<body>
+
+	<!-- form 태그에 name 속성을 설정하는 경우에는
+		   자바스크립트를 사용할 목적으로 name 속성을 사용한다. -->
+	<form name="frm">
+		<input type="text" name="input" />
+		<input type="button" value="확인하기" onclick="data()" />
+	</form>	   
+	<br />
+	<hr />
+	<form name="cacl">
+		<p>첫번째 수<input type="text" id="su1"></p>
+		<p>두번째 수<input type="text" id="su2"></p>
+		<input type="radio" name="op" value="+">+
+		<input type="radio" name="op" value="-">-
+		<input type="radio" name="op" value="*">*
+		<input type="radio" name="op" value="/">/
+		<input type="radio" name="op" value="%">%
+		<button value="계산" onclick="calc()">계산</button>
+	</form>
+	<!-- 내가 해 본 calc -->
+
+</body>
+</html>

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+
+	/*
+		자바스크립트 배열 객체 생성 방법(3가지)
+			1. let 배열명 = new Array(원소1, 원소2, 원소3, .... 원소n)
+			2. let 배열명 = [원소1, 원소2, 원소3, .... 원소n]
+			3. let 배열명 = new Array();
+		  	- 모든 데이터 타입(자료형)을 다 담을 수 있음.
+	*/
+	// 방법 1
+	let arr1 = new Array("홍길동", 27, true);
+	document.write(arr1 + "<br />");		// 전체원소 (요소)
+	document.write(arr1[1] + "<br />");		// 27
+	
+	document.write("<hr />");
+	
+	// 방법 2
+	let arr2 = ["홍길동", 27 , true];
+	document.write(arr2 + "<br />");
+	document.write(arr2[2] + "<br />");
+	
+	document.write("<hr />");
+	
+	// 방법 3
+	let arr3 = new Array();
+	arr3[0] = "홍길동";
+	arr3[1] = 27;
+	arr3[2] = true;
+	document.write(arr3 + "<br />");
+	
+	for(let i = 0; i <arr3.length; i++){
+		document.write("arr3["+i+"] ==>" + arr3[i] + "<br />");
+	}
+	
+	document.write("<hr />");
+	
+	for(let prop in arr3){
+		document.write(prop + " ");	// key 값 출력(value 값 못 가져옴)
+	}
+	document.write("<br />");
+	for(let prop of arr3){
+		document.write(prop + " ");	// value값 [Symbol.iterator] 속성을 가진 것만 반복
+	}
+	// 책에 있던 것!
+	
+	
+</script>
+</head>
+<body>
+
+</body>
+</html>

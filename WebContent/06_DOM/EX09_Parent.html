@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+<script type="text/javascript">
+	onload = function(){
+		let myDiv = document.getElementById("myDiv");
+		myDiv.style.backgroundColor = "yellow";
+		
+		//id가 myDiv인 요소의 부모 요소
+		let parent = myDiv.parentNode;
+		// .style1의 자식 노드들의 배경색이 전부 skyblue가 된다.
+		parent.style.backgroundColor = "skyblue";
+		let pparent = parent.parentNode;
+		pparent.style.backgroundColor = "pink";
+		
+		document.getElementById("img1").onclick = function(){
+			let img1 = document.getElementById("img1");
+			console.log(img1.src);
+			img1.src =
+				(img1.src == "http://localhost:8282/05_JavaScript/carimages/car3.gif") ?
+						"../carimages/car1.gif" : "../carimages/car3.gif";
+			// class나 id를 변경하는 예제는 해보았으니 이번엔 소스를 받아와보자!
+			// 변수에 .src까지 담지는 못한당 ㅜㅜㅜ
+			
+		}
+		document.getElementById("img2").onclick = function(){
+			document.getElementById("img2").style.visibility = "hidden";
+		}
+	}
+
+</script>
+
+
+	<div>부모노드(ParentNode)</div>
+	<div class="style1">
+		<div>테스트1</div>
+		<div>테스트2</div>
+		<div id="myDiv">테스트2-1</div>
+		<div>테스트3</div>
+		<div>테스트4</div>
+	</div>
+	<div>........</div>
+	<img src="../carimages/car1.gif" alt="" id="img1" />
+	<img src="../carimages/car2.gif" alt="" id="img2" />
+</body>
+</html>
